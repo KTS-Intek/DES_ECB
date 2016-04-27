@@ -369,7 +369,7 @@ void DEScifrECB::permutation()
 //======================================================================
 void DEScifrECB::keygen(const QByteArray &arrKey)
 {
-    QBitArray keyArrBit = byteArrayToBitArray(arrKey.left(8).rightJustified(8,'0'));
+    QBitArray keyArrBit = byteArrayToBitArray(arrKey.left(8).leftJustified(8,'0'));
     for(int i = 0, iMax = keyArrBit.size(); i <  iMax; i++)
         key[i] = keyArrBit.at(iMax - i - 1) ? 1 : 0;
 
