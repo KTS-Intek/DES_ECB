@@ -10,7 +10,7 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    descifrecb.cpp
+    cifrdescryptopp.cpp
 
 HEADERS += \
-    descifrecb.h
+    cifrdescryptopp.h
