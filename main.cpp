@@ -37,8 +37,6 @@ int main(int argc, char *argv[])
      //повинно бути    86 04 6F F5 3E E9 19 3C
 
 
-
-
 //    qDebug() << 3 << prettyHex(des.encrypt(QByteArray::fromHex("34 38 38 09 30 23 45 76"),  QByteArray::fromHex("0123456789abcdef")));  //QByteArray::fromHex("ffffffffffffffff")));
 //    34	08	82	94	4d	f6	83	c3
 
