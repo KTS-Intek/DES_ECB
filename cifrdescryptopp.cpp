@@ -111,9 +111,7 @@ desInt final_message_permutation[] =  {40,  8, 48, 16, 56, 24, 64, 32,
 //============================================================================
 CifrDesCryptoPP::CifrDesCryptoPP(QObject *parent) : QObject(parent)
 {
-//initialize
-    //без цього перший раз буде фігня на виході
-    encrypt("", "");
+
 }
 //============================================================================
 QByteArray CifrDesCryptoPP::encrypt(QByteArray inData, QByteArray key)
@@ -158,7 +156,7 @@ void CifrDesCryptoPP::generate_sub_keys(DesList main_key, CifrDesCryptoPP::key_s
         key_sets[0].k[i] = 0;
     }
 
-    for (i=0; i<56; i++) {
+    for (desInt i = 0; i < 56; i++) {
         shift_size = initial_key_permutaion[i];
         shift_byte = 0x80 >> ((shift_size - 1)%8);
         shift_byte &= main_key[(shift_size - 1)/8];
@@ -186,6 +184,9 @@ void CifrDesCryptoPP::generate_sub_keys(DesList main_key, CifrDesCryptoPP::key_s
             key_sets[i].c[j] = key_sets[i-1].c[j];
             key_sets[i].d[j] = key_sets[i-1].d[j];
         }
+
+        for(int j = 0; j < 8; j++)
+            key_sets[i].k[j] = (desInt)0;
 
         shift_size = key_shift_sizes[i];
         if (shift_size == 1){

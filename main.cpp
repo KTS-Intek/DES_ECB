@@ -22,19 +22,20 @@ int main(int argc, char *argv[])
 
     CifrDesCryptoPP des;
         qDebug() << 1111 << prettyHex(des.encrypt(QByteArray::fromHex("5C 32 07 73 87 28 00 00"), QByteArray("password")));  // QByteArray("password")));
-//fb	2d	5a	9c	3d	e3	aa	1d
-        //704998d8e373d602
         qDebug() << 1111 << prettyHex(des.decrypt(QByteArray::fromHex("86 04 6f f5 3e e9 19 3c"), QByteArray("password")));  // QByteArray("password")));
 
 
     qDebug() << 1 << prettyHex(des.encrypt(QByteArray::fromHex("4D 2F 08 22 3C 60 4D FA "), QByteArray("password")));
-    //повинно бути    57 50 09 75 58 43 7f f2
     //4D 2F 08 22 3C 60 4D FA   - 2B BF 90 04 47 2C 65 8C
     qDebug() << 111 << prettyHex(des.decrypt(QByteArray::fromHex("2b bf 90 04 47 2c 65 8c"), QByteArray("password")));
 
 
     qDebug() << 2 << prettyHex(des.encrypt(QByteArray::fromHex("5C 32 07 73 87 28 00 00"), QByteArray("password")));
+
+
      //повинно бути    86 04 6F F5 3E E9 19 3C
+
+    qDebug() << 3 <<  des.encrypt(QByteArray::fromHex("5c32077387280000"), "password").toHex();
 
 
 //    qDebug() << 3 << prettyHex(des.encrypt(QByteArray::fromHex("34 38 38 09 30 23 45 76"),  QByteArray::fromHex("0123456789abcdef")));  //QByteArray::fromHex("ffffffffffffffff")));

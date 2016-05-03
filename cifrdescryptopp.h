@@ -6,9 +6,11 @@
 #define ENCRYPTION_MODE 1
 #define DECRYPTION_MODE 0
 
+
+
 typedef quint8 desInt ;
 typedef QList<desInt> DesList;
-typedef QHash<QString,desInt> desHash;
+
 
 class CifrDesCryptoPP : public QObject
 {
@@ -26,6 +28,7 @@ public:
         unsigned char c[4];
         unsigned char d[4];
     } key_set;
+    desHash masHash[17];
 
 
     void generate_sub_keys(DesList main_key, key_set* key_sets);
