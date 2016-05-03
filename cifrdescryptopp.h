@@ -28,7 +28,6 @@ public:
         unsigned char c[4];
         unsigned char d[4];
     } key_set;
-    desHash masHash[17];
 
 
     void generate_sub_keys(DesList main_key, key_set* key_sets);
