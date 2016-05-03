@@ -8,6 +8,7 @@
 
 typedef quint8 desInt ;
 typedef QList<desInt> DesList;
+typedef QHash<QString,desInt> desHash;
 
 class CifrDesCryptoPP : public QObject
 {

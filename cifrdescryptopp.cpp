@@ -112,7 +112,7 @@ desInt final_message_permutation[] =  {40,  8, 48, 16, 56, 24, 64, 32,
 CifrDesCryptoPP::CifrDesCryptoPP(QObject *parent) : QObject(parent)
 {
 //initialize
-    //не знаю нахера, але без цього перший раз буде якась херня
+    //без цього перший раз буде фігня на виході
     encrypt("", "");
 }
 //============================================================================
